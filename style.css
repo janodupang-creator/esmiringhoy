@@ -43,6 +43,13 @@ h1 span { color: var(--coral); }
 .restart-button:hover { transform: translateY(-2px); background: #e7e2ff; }
 .restart-button:active { transform: scale(.96); }
 .board { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 11px; }
+.board[data-columns="3"] { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.game-options { display: flex; align-items: center; justify-content: space-between; margin: 0 0 11px; }
+.difficulty-control { display: flex; align-items: center; gap: 8px; color: #858b9b; font-size: 11px; font-weight: 700; }
+.difficulty-control select { padding: 7px 25px 7px 10px; border: 1px solid #eeeaf2; border-radius: 9px; color: #6257be; background: #fff; font: 700 11px 'DM Sans', sans-serif; cursor: pointer; }
+.sound-button { padding: 7px 10px; border: 1px solid #eeeaf2; border-radius: 9px; color: #6257be; background: #fff; font: 700 11px 'DM Sans', sans-serif; cursor: pointer; transition: background .18s; }
+.sound-button:hover { background: #f7f5ff; }
+.sound-button:focus-visible, .difficulty-control select:focus-visible { outline: 3px solid #ffb2a7; outline-offset: 2px; }
 .memory-card { aspect-ratio: 1 / .88; min-width: 0; padding: 0; border: 0; border-radius: 14px; background: transparent; perspective: 700px; cursor: pointer; -webkit-tap-highlight-color: transparent; }
 .memory-card:focus-visible, .restart-button:focus-visible { outline: 3px solid #ffb2a7; outline-offset: 3px; }
 .card-inner { position: relative; display: block; width: 100%; height: 100%; transform-style: preserve-3d; transition: transform .42s cubic-bezier(.2,.75,.25,1); }
@@ -69,6 +76,7 @@ footer span { color: #f2948b; }
   .memory-card, .card-face { border-radius: 12px; }
   .card-back::after { inset: 4px; border-radius: 9px; }
   .scoreboard { gap: 10px; padding-inline: 8px; }
+  .board { gap: 8px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
